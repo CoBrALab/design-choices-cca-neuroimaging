@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+#a simple funtion which runs permutations of CCA (shuffled) that can be called from niagara using the slurm module
+
 import pandas as pd
 from sklearn.cross_decomposition import CCA
 from sklearn.utils import resample
