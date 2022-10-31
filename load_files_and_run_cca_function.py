@@ -11,21 +11,29 @@ import feather
 from sklearn.preprocessing import StandardScaler
 
 def run_shuffled_cca(ddata,vdata,n_cca_components,iteri,outfolder):
+    
+    #Initialize number of components for CCA and the current bootstrap iteration
     n_cca_components = int(n_cca_components)
     iteri = int(iteri)
+    
+    #Read in vertices and demographic files
     vertexes_data = pd.read_feather(vdata)
-    print(vertexes_data.shape)
+    #print(vertexes_data.shape)
     demographics_data = pd.read_feather(ddata)
-    print(demographics_data.shape)
+    #print(demographics_data.shape)
+    
+    #shuffle data (break linkages)
     vertexes_shuffled = shuffle(vertexes_data, random_state=iteri)
-    #vertexes_shuffled = shuffle(vertexes)
+    
+    #Create and run CCA model
     cca_model_shuffled = CCA(n_components=n_cca_components)
     cca_model_shuffled.fit(demographics_data,vertexes_shuffled)
-    #coefficients_temp = cca_model_shuffled.coef_
-    #X_loadings_temp = cca_model_shuffled.x_loadings_
-    #Y_loadings_temp = cca_model_shuffled.y_loadings_
+    
+    #Calculate correlation coefficient
     test1_c, test2_c = cca_model_shuffled.transform(demographics_data, vertexes_shuffled)
     testcorrs = np.corrcoef(test1_c.T, test2_c.T).diagonal(offset=cca_model_shuffled.n_components)
+    
+    #Save coeeficient to file
     np.savetxt(outfolder + "//bootstrapcorrcoef" + str(iteri) + ".csv", testcorrs, delimiter=",")
 
 
