@@ -32,11 +32,11 @@ Measure #3 | Measure #4
 After cloning this repo using the git clone command:
 *git clone _*
 
-The conda environment with all dependencies can be set-up using the spec-file.txt:
+The conda environment with all dependencies can be set-up using the command:
 *conda env create -f environment.yml*
 
 Within this environment cca can be run from the command line using:
 *python ./load_files_and_run_cca_function.py examplefile1.feather examplefile2.feather 2 1 outputfolder*
 where 2 is the number of canonical components to keep and 1 is the iteration number.
 
-The resulting 2x1 csv file will be saved in the specified output folder.
+The resulting 2x1 csv file will be saved in the specified output folder. If multiple iterations are run, they will be saved to separate outputfiles within the same folder.
