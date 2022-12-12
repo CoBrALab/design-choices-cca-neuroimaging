@@ -12,6 +12,23 @@ Many iterations of the canonical correaltion analyses can be computationally exp
 ## Example
 Two small example files are included in the repo: example_demographics1.feather and example_demographics1.feather. Both example files contain two different demographic measures, which have been preprocessed and z-scored. 
 
+Demographics File 1:
+Measure #1 | Measure #2
+--- | --- 
+-0.894 | 0.779
+-0.821 | 0.119 
+-0.675 | 0.424 
+... | ... 
+
+Demographics File 2:
+Measure #3 | Measure #4
+--- | --- 
+-1.424 | -0.567
+-1.067 | -0.505 
+-0.425 | -1.188 
+... | ... 
+
+
 After cloning this repo using the git clone command:
 *git clone _*
 
