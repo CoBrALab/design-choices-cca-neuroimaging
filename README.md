@@ -40,3 +40,8 @@ Within this environment cca can be run from the command line using:
 where 2 is the number of canonical components to keep and 1 is the iteration number.
 
 The resulting 2x1 csv file will be saved in the specified output folder. If multiple iterations are run, they will be saved to separate outputfiles within the same folder.
+
+CCs
+--- |  
+0.103 |
+0.014 |
