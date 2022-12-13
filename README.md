@@ -1,47 +1,13 @@
 # Canonical Correlation Analyses
+Canonical correlation analysis (CCA) is used to identify and measure the associations among two sets of variables while maximizing correlation. Canonical correlation can be used in place of multiple regression, but accounts for scenarios where there are multiple intercorrelated outcome variables.
 
 ## Purpose
 These scripts were designed to perform data reduction in matrix format and run canonical correlation analysis (CCA). This process consists of three optional steps:
-  1. Either principal componen analysis (PCA) or independent component analysis (ICA) can be performed on vertexwise CT files from CIVET.
-  2. Spectral clustering can be used to parcellate the data of a single .obj file from CIVET, and the result can be transformed to vertexwise files from CIVET.
-  3. CCA accepts two datasets in matrix format (one from either step 1 or 2) and performs the input number of runs with permutations of this data.
+  1. Either principal componen analysis (PCA) or independent component analysis (ICA) can be performed on a matrix stored in .csv format, with values for the left and right brain hemispheres being stored in separate files. Note: This program is was designed to use the vertexwise cortical thickness files from CIVET (https://www.bic.mni.mcgill.ca/ServicesSoftware/CIVET) but can use input matrices of any size.
+  2. Spectral clustering can be used to parcellate the data of a single .obj file and assign each vertex to an individual group. Note: This implementation was designed to use the .obj file containing surface area vertices from CIVET and the result is a brain parcellation which can then be applied to further vertexwise files from CIVET.
+  3. CCA accepts two datasets in matrix format (one can be obtained from the results of either step 1 or 2 but does not need to be) and performs the input number of runs with permutations of this data.
 
-## Use
-Many iterations of the canonical correaltion analyses can be computationally expensive, so it is recommended to perform larger number of iterations on a capable machine or on the Niagara environment as individual jobs.
-
-## Example
-Two small example files are included in the repo: example_demographics1.feather and example_demographics1.feather. Both example files contain two different demographic measures, which have been preprocessed and z-scored. 
-
-Demographics File 1:
-Measure #1 | Measure #2
---- | --- 
--0.894 | 0.779
--0.821 | 0.119 
--0.675 | 0.424 
-... | ... 
-
-Demographics File 2:
-Measure #3 | Measure #4
---- | --- 
--1.424 | -0.567
--1.067 | -0.505 
--0.425 | -1.188 
-... | ... 
+## Usage
+Many iterations of the canonical correaltion analyses can be computationally expensive, so it is recommended to perform larger number of iterations on a capable machine or on the Niagara environment as individual jobs. Example input and instructions are provided in the example folder
 
 
-After cloning this repo using the git clone command:
-*git clone _*
-
-The conda environment with all dependencies can be set-up using the command:
-*conda env create -f environment.yml*
-
-Within this environment cca can be run from the command line using:
-*python ./load_files_and_run_cca_function.py examplefile1.feather examplefile2.feather 2 1 outputfolder*
-where 2 is the number of canonical components to keep and 1 is the iteration number.
-
-The resulting 2x1 csv file will be saved in the specified output folder. If multiple iterations are run, they will be saved to separate outputfiles within the same folder.
-
-CCs
---- |  
-0.103 |
-0.014 |
