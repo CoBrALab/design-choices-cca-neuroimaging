@@ -13,14 +13,11 @@ Running many iterations of the canonical correaltion analysis may be computation
 ## Dependencies 
 The python libraries used to implement these fuctionalities include:
 
-sklearn (https://scikit-learn.org/stable/)
-
-pandas (https://pandas.pydata.org/)
-
-numpy (https://numpy.org/)
-
-feather (https://arrow.apache.org/docs/python/feather.html)
++ [sklearn](https://scikit-learn.org/stable/)
++ [pandas](https://pandas.pydata.org/)
++ [numpy](https://numpy.org/)
++ [feather](https://arrow.apache.org/docs/python/feather.html)
 
 Spectral clustering requires the following additional library:
 
-vtk (https://vtk.org/)
++ [vtk](https://vtk.org/)
