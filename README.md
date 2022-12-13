@@ -8,6 +8,13 @@ These scripts were designed to perform data reduction in matrix format and run c
   3. CCA accepts two datasets in matrix format (one can be obtained from the results of either step 1 or 2 but does not need to be) and performs the input number of runs with permutations of this data.
 
 ## Usage
-Many iterations of the canonical correaltion analyses can be computationally expensive, so it is recommended to perform larger number of iterations on a capable machine or on the Niagara environment as individual jobs. Example input and instructions are provided in the example folder
+Running many iterations of the canonical correaltion analysis may be computationally expensive dependning on the size of the dataset and the number of iterations, so it is recommended to perform larger number of iterations on a capable machine or on a distributed environment so that multiple iterations can be run simultaneously. Example input and instructions are provided in the example folder. 
 
-
+## Dependencies 
+Multiple python libraries are used for these fuctionalities including:
+sklearn (https://scikit-learn.org/stable/)
+pandas (https://pandas.pydata.org/)
+numpy (https://numpy.org/)
+feather (https://arrow.apache.org/docs/python/feather.html)
+Additionally, spectral clustering requires the following additional library:
+vtk (https://vtk.org/)
