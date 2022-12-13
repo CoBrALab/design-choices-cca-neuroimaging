@@ -24,4 +24,5 @@ Spectral clustering requires the following additional library:
 
 ### More
 Author: Grace Pigeau
+
 Pre-print available at: tbd
