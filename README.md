@@ -21,3 +21,7 @@ The python libraries used to implement these fuctionalities include:
 Spectral clustering requires the following additional library:
 
 + [vtk](https://vtk.org/)
+
+### More
+Author: Grace Pigeau
+Pre-print available at: tbd
